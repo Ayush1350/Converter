@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div> 
+
+        <h1>Converter</h1>
+
+    <label>Enter Value: </label> <input type="text" id="txt1">
+    <p> Result: <label id="result"> </label></p>
+
+    <button onclick="Converter('DollarToRupee')" id="bwt1">Dollar To Rupee</button> <br>
+    <button onclick="Converter('RupeeToDollar')" id="bwt2">Rupee To Dollar</button><br>
+    <button onclick="Converter('CmToFoot')" id="bwt3">Cm. To Foot</button><br>
+    <button onclick="Converter('KmToFoot')" id="bwt4">Km. To Foot</button><br>
+    <button onclick="exit()" id="bwt5">exit</button><br>
+
+    </div>
+    
+    
+</body>
+
+<script>
+
+    function Converter(type) {
+
+        var value = parseFloat(txt1.value);
+        var resultLabel = document.getElementById("result");
+
+        switch (type) {
+            case "DollarToRupee":
+                resultLabel.innerHTML=value*83.01;
+                break;
+
+            case "RupeeToDollar":
+                resultLabel.innerHTML=value/83.01;
+                break;
+
+                              
+            case "CmToFoot":
+                resultLabel.innerHTML=value/0.0328084;
+                break;
+                
+            case "KmToFoot":
+                resultLabel.innerHTML=value*3280.84;
+                break; 
+        }
+    }
+    function exit() {
+            alert("Exiting...");
+        }
+
+</script>
+
+</html>
